@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pdfplumber
+python-docx
+scikit-learn
+reportlab
+PyJWT
+bcrypt
+python-multipart
+pytest
+httpx

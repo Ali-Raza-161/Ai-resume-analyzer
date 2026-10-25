@@ -1,0 +1,12 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'; import Login from './pages/Login'; import Register from './pages/Register'
+import Analyze from './pages/Analyze'; import Result from './pages/Result'; import History from './pages/History'; import Admin from './pages/Admin'
+export default function App() {
+  return <AuthProvider><BrowserRouter><Navbar /><Routes>
+    <Route path="/" element={<Home />} /><Route path="/login" element={<Login />} /><Route path="/register" element={<Register />} />
+    <Route path="/analyze" element={<Analyze />} /><Route path="/result/:id" element={<Result />} />
+    <Route path="/history" element={<History />} /><Route path="/admin" element={<Admin />} />
+  </Routes></BrowserRouter></AuthProvider>
+}

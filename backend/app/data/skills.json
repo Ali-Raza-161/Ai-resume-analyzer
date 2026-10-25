@@ -1,0 +1,14 @@
+{"skills": [
+ {"name": "Python", "category": "Programming"}, {"name": "JavaScript", "category": "Programming"},
+ {"name": "TypeScript", "category": "Programming"}, {"name": "React", "category": "Frontend"},
+ {"name": "Node.js", "category": "Backend"}, {"name": "FastAPI", "category": "Backend"},
+ {"name": "SQL", "category": "Database"}, {"name": "PostgreSQL", "category": "Database"},
+ {"name": "MongoDB", "category": "Database"}, {"name": "Docker", "category": "Tools"},
+ {"name": "Git", "category": "Tools"}, {"name": "HTML", "category": "Frontend"},
+ {"name": "CSS", "category": "Frontend"}, {"name": "Tailwind CSS", "category": "Frontend"},
+ {"name": "Machine Learning", "category": "AI"}, {"name": "NLP", "category": "AI"},
+ {"name": "Communication", "category": "Soft skill"}, {"name": "Teamwork", "category": "Soft skill"},
+ {"name": "Problem Solving", "category": "Soft skill"}, {"name": "Java", "category": "Programming"},
+ {"name": "C++", "category": "Programming"}, {"name": "AWS", "category": "Cloud"},
+ {"name": "Linux", "category": "Tools"}, {"name": "REST API", "category": "Backend"}
+]}

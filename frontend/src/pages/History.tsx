@@ -1,0 +1,4 @@
+import { useEffect, useState } from 'react'; import { Link } from 'react-router-dom'; import { listAnalyses, deleteAnalysis } from '../services/api'
+export default function History() { const [rows, setRows] = useState<any[]>([])
+  const load = () => { listAnalyses().then(setRows).catch(() => setRows([])) }; useEffect(() => { load() }, [])
+  return <main className="max-w-2xl mx-auto p-8"><h1 className="text-2xl font-bold">Analysis history</h1>{rows.length === 0 ? <p className="mt-4">No analyses yet. Login and analyze a CV first.</p> : rows.map(r => <div key={r.id} className="border rounded-xl p-4 my-3 flex justify-between"><span>#{r.id} — Score {r.overall_score} — {r.created_at}</span><span><Link className="text-blue-700 mr-3" to={`/result/${r.id}`}>View</Link><button className="text-red-600" onClick={async () => { await deleteAnalysis(r.id); load() }}>Delete</button></span></div>)}</main> }

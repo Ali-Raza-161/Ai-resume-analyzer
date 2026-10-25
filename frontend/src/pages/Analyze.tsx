@@ -1,0 +1,4 @@
+import { useState } from 'react'; import { useNavigate } from 'react-router-dom'; import UploadBox from '../components/UploadBox'; import { useAnalysis } from '../hooks/useAnalysis'
+export default function Analyze() { const [file, setFile] = useState<File | null>(null); const [jd, setJd] = useState(''); const { loading, error, run } = useAnalysis(); const nav = useNavigate()
+  const submit = async () => { if (!file) return; const r = await run(file, jd); nav(`/result/${r.analysis_id}`) }
+  return <main className="max-w-2xl mx-auto p-8"><h1 className="text-2xl font-bold">Analyze a CV</h1><div className="mt-4"><UploadBox onFile={setFile} onJd={setJd} /></div>{file && <p className="mt-3">Selected: {file.name}</p>}<button onClick={submit} disabled={!file || loading} className="mt-4 bg-blue-700 text-white px-6 py-2 rounded-full disabled:opacity-50">{loading ? 'Analyzing…' : 'Analyze'}</button>{error && <p className="text-red-600 mt-3">{error}</p>}</main> }
